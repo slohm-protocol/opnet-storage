@@ -46,14 +46,16 @@
  (data $17.1 (i32.const 3352) "\01")
  (data $18 (i32.const 3372) "\1c")
  (data $18.1 (i32.const 3384) "\01")
- (data $19 (i32.const 3404) "\1c")
- (data $19.1 (i32.const 3416) "\01")
- (data $20 (i32.const 3436) "\1c")
- (data $20.1 (i32.const 3448) "\01")
- (data $21 (i32.const 3468) "\1c")
- (data $21.1 (i32.const 3480) "\01")
- (data $22 (i32.const 3500) "<")
- (data $22.1 (i32.const 3512) "\02\00\00\00 \00\00\00R\00u\00n\00t\00i\00m\00e\00E\00x\00c\00e\00p\00t\00i\00o\00n")
+ (data $19 (i32.const 3404) ",")
+ (data $19.1 (i32.const 3416) "\02\00\00\00\0e\00\00\00b\00c\001\00d\00e\00a\00d")
+ (data $20 (i32.const 3452) "\1c")
+ (data $20.1 (i32.const 3464) "\01")
+ (data $21 (i32.const 3484) "\1c")
+ (data $21.1 (i32.const 3496) "\01")
+ (data $22 (i32.const 3516) "\1c")
+ (data $22.1 (i32.const 3528) "\01")
+ (data $23 (i32.const 3548) "<")
+ (data $23.1 (i32.const 3560) "\02\00\00\00 \00\00\00R\00u\00n\00t\00i\00m\00e\00E\00x\00c\00e\00p\00t\00i\00o\00n")
  (export "memory" (memory $0))
  (start $~start)
  (func $~lib/rt/stub/__new (param $0 i32) (param $1 i32) (result i32)
@@ -221,7 +223,7 @@
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
-  i32.const 3564
+  i32.const 3612
   global.set $~lib/rt/stub/offset
   i32.const 0
   i32.const 5
@@ -568,12 +570,24 @@
   i32.const 3392
   call $~lib/rt/__newArray
   i32.store offset=12
-  i32.const 48
+  i32.const 56
   i32.const 13
   call $~lib/rt/stub/__new
+  local.tee $0
+  i32.eqz
+  if
+   i32.const 0
+   i32.const 0
+   call $~lib/rt/stub/__new
+   local.set $0
+  end
+  local.get $0
+  i32.const 3424
+  i32.store
+  local.get $0
   local.set $1
   i32.const 8
-  i32.const 25
+  i32.const 24
   call $~lib/rt/stub/__new
   local.tee $0
   i32.eqz
@@ -593,22 +607,22 @@
   end
   local.get $0
   i32.const 16
-  i32.const 3424
+  i32.const 3472
   call $~lib/rt/__newArray
   i32.store
   local.get $0
   i32.const 16
-  i32.const 3456
+  i32.const 3504
   call $~lib/rt/__newArray
   i32.store offset=4
   local.get $1
   local.get $0
-  i32.store
-  local.get $1
-  i32.const 21
-  i32.const 3488
-  call $~lib/rt/__newArray
   i32.store offset=4
+  local.get $1
+  i32.const 20
+  i32.const 3536
+  call $~lib/rt/__newArray
+  i32.store offset=8
   i32.const 32
   i32.const 14
   call $~lib/rt/stub/__new
@@ -626,9 +640,6 @@
   i64.store offset=24
   local.get $1
   local.get $0
-  i32.store offset=8
-  local.get $1
-  i32.const 0
   i32.store offset=12
   local.get $1
   i32.const 0
@@ -637,19 +648,22 @@
   i32.const 0
   i32.store offset=20
   local.get $1
+  i32.const 0
+  i32.store offset=24
+  local.get $1
   i64.const 0
-  i64.store offset=24
-  local.get $1
-  i32.const 0
-  i32.store offset=32
-  local.get $1
-  i32.const 0
-  i32.store16 offset=36
+  i64.store offset=32
   local.get $1
   i32.const 0
   i32.store offset=40
   local.get $1
   i32.const 0
-  i32.store offset=44
+  i32.store16 offset=44
+  local.get $1
+  i32.const 0
+  i32.store offset=48
+  local.get $1
+  i32.const 0
+  i32.store offset=52
  )
 )
